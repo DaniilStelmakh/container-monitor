@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	handlers "github.com/DaniilStelmakh/backend/src/api"
-	"github.com/DaniilStelmakh/backend/src/database"
+	handlers "github.com/DaniilStelmakh/container-monitor/src/api"
+	"github.com/DaniilStelmakh/container-monitor/src/database"
 	"github.com/go-chi/chi"
 	"github.com/joho/godotenv"
 	"log"

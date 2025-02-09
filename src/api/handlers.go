@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"database/sql"
 	"encoding/json"
-	"github.com/DaniilStelmakh/backend/src/database"
-	_ "github.com/DaniilStelmakh/backend/src/database"
-	"github.com/DaniilStelmakh/backend/src/dto"
+	"github.com/DaniilStelmakh/container-monitor/src/database"
+	_ "github.com/DaniilStelmakh/container-monitor/src/database"
+	"github.com/DaniilStelmakh/container-monitor/src/dto"
 	"log"
 	"net/http"
 

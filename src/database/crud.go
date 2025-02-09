@@ -3,7 +3,7 @@ package database
 import (
 	"database/sql"
 	"fmt"
-	"github.com/DaniilStelmakh/backend/src/dto"
+	"github.com/DaniilStelmakh/container-monitor/src/dto"
 	_ "github.com/lib/pq"
 	"log"
 	"os"

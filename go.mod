@@ -1,4 +1,4 @@
-module github.com/DaniilStelmakh/backend
+module github.com/DaniilStelmakh/container-monitor
 
 go 1.23.2
 
