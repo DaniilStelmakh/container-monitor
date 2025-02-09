@@ -1,0 +1,53 @@
+services:
+  container-monitor:
+    build: .
+    env_file:
+      - .env
+    environment:
+      - PORT=8080
+      - DB_HOST=db
+      - DB_USER=backend
+      - DB_PASSWORD=backend
+      - DB_NAME=postgres
+    hostname: backend
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - common
+  db:
+    image: postgres:latest
+    environment:
+     - POSTGRES_USER=${DB_USER}
+     - POSTGRES_PASSWORD=${DB_PASSWORD}
+     - POSTGRES_DB=${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+    networks:
+      - common
+  pinger:
+    build: ~/Documents/pinger
+    env_file:
+      - .env
+    environment:
+     - INTERVAL=60
+     - IPS=google.com
+     - API_HOST=container-monitor
+     - API_PORT=8080
+    depends_on:
+      - container-monitor
+    networks:
+      - common
+volumes:
+  postgres-db:
+  .:
+networks:
+  common: {}
+
