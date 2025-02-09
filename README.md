@@ -49,3 +49,17 @@ go build -o /pinger/main.go
 ```shell
 docker compose up 
 ```
+## Переменные окружения 
+Backend:
+- PORT порт на котором будут приниматься запросы
+- DB_HOST хост базы данных
+- DB_USER имя пользователя базы данных 
+- DB_PASSWORD пароль пользователя базы данных
+- DB_NAME схема
+
+Pinger:
+- INTERVAL время опроса контейнера
+в секундах 
+- IPS ip контейнеров через запятую 
+- API_HOST хост backend сервиса
+- API_PORT порт backend сервиса  
